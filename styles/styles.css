@@ -1,0 +1,99 @@
+* {
+	margin: 0;
+}
+
+
+h1, h2, h3, h4, h5, h6, p {
+	margin-bottom:  20px;
+    font-family: helvetica;
+}
+
+/*html, body {
+	height: 100%;
+    width: 100%;
+}*/
+
+
+
+nav ul li{
+	list-style: none;
+	display: inline-block;
+	padding: 10px 10px;
+
+}
+
+.container {
+	         width: 100%;
+	         margin: 0 auto;
+	         max-width: 1200px;;
+	         box-sizing: border
+}
+
+a {text-decoration: none; color: white;}
+
+ .nav {
+	background-color: #FF5722;
+	color: white;
+	font-family: helvetica;
+	font-size: 18px;
+	height: 45px;
+
+}
+
+h3 {
+	 position: relative;
+	 top: 10px;
+}
+
+
+.view img {
+	position: relative;
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+	max-width: 300px;
+	max-height: 250px;
+	float: left;
+}
+
+.view  {
+	
+	background-color: #AFB42B;
+	/*width: 150px;
+	height: 150px;*/
+	margin: 10px;
+	display: inline-block;
+	
+	color: white;
+	text-align: center;
+ 
+    margin-top: 25px;
+   
+}
+
+.drinkView img {
+   height: 150px;
+}
+
+div p {
+	margin-top: 55px;
+}
+
+div.about {
+	width: 400px;
+	height: 300px;
+}
+
+
+/*************************
+  study
+**************************/
+
+.study {
+	float: left;
+	display: inline-block;
+	margin-top: 25px;
+	background-color:#157DF2;
+	padding: 100px;
+	margin: 20px; 
+}

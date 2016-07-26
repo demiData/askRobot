@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1, minimum-scale=1.0, maximum-scale=1.0 ">
+	<link rel="stylesheet" href="styles/styles.css">
+		<title></title>
+	</head>
+	<body>
+
+	<nav class="menu-view">
+	<ul>
+		<li id="askRobot">askRobot</li>
+		<li id="about">ABOUT</li>
+		<li id="contact">CONTACT</li>
+	</ul>
+	</nav>
+
+	<div class="view" id="studyView"><p>Quiet Place</p></div>
+	<div class="view" id="hungrytView"><p>Some Noise</p></div>
+	<div class="view" id="drinkView"><p>Loud noise ok!</p></div>
+	<div class="view" id="danceView"><p>Study alone</p></div>
+    <div class="view" id="movieView"><p>Study with friends</p></div>
+    <div class="view" id="wizardsView"><p>Wizards</p></div>
+	
+		 
+    
+	<script src="js/jquery-1.12.3.min.js"></script>
+	<script src="js/jquery.transit.min.js"></script>
+    <script src="js/app.js"></script>
+	</body>
+</html>
