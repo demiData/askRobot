@@ -1,0 +1,49 @@
+*** Phone Gap ***
+
+1. Geolocation.
+   This plugin provides latitude and longtitude information about the device. But without guarantee of the device's actual location.
+   In order for the plugin to work "deviceready" event must be added.
+
+  *****
+
+   document.addEventListener("deviceready", onDeviceReady, false);
+  			function onDeviceReady() {
+    		console.log("navigator.geolocation works well");
+   		   }
+  ****
+
+  So the methods used are:
+  1. navigator.geolocation.getCurrentPosition
+  2. navigator.geolocation.watchPosition
+  3. navigator.geolocation.clearWatch
+
+  Objects:
+  1. Position
+  2. PositionError
+  3. Coordinates
+  
+ -navigator.geolocation.getCurrentPosition-
+ This returns the device's current position to the "geolocationSuccess" callback with a "Position" object as the parameter. If there is an error, the "geolocationError" callback is passed a "PositionError" object.
+
+
+Parameters
+
+1. geolocationSuccess: The callback that is passed the current position.
+2. geolocationError: (Optional) The callback that executes if an error occurs.
+3. geolocationOptions: (Optional) The geolocation options.
+
+-navigator.geolocation.watchPosition-
+Returns the device's current position when a change in position is detected. When the device retrieves a new location, the geolocationSuccess callback executes with a Position object as the parameter. If there is an error, the geolocationError callback executes with a PositionError object as the parameter.
+
+Returns
+String: returns a watch id that references the watch position interval. The watch id should be used with navigator.geolocation.clearWatch to stop watching for changes in position.
+
+
+2. Google Navigate.
+   This plugin navigates device user to location. With the method query, success, fail.
+   Not much is said about this plugin, pretty straightforward it seems.
+
+   query:   Navigate to location. Can be in "address,zipcode,city" or "lat,lon" form
+   success: Called without args. if request was successful
+   fail:    Called with errMsg as argument if request was unsuccessful
+
