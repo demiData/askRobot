@@ -57,6 +57,7 @@ header{
 		  cursor:pointer;
 		  outline:none;
 	  z-index:10000000000000;
+
 }
 .menu{z-index:1000000; font-weight:bold; font-size:0.8em; width:100%; background:#131313;  position:absolute; text-align:center;}
 .menu ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none;}
@@ -64,7 +65,7 @@ header{
 .menu li:hover{display: block;    background:#181818; padding:15px 0 15px 0; border-bottom:#1d1f20 1px solid;}
 .menu ul li a { text-decoration:none;  margin: 0px; color:#fff;}
 .menu ul li a:hover {  color: #fff; text-decoration:none;}
-.menu a{text-decoration:none; color:white;}
+.menu a{text-decoration:none; color:white; }
 .menu a:hover{text-decoration:none; color:white;}
 
 .glyphicon-home{
@@ -107,7 +108,12 @@ header{
 	display: flex;
 	flex-direction: column;
 	height: 150px;
-    background-color: #FFFFFF;
+}
+
+label {
+	line-height: 100px;
+	height: 90px;
+	font-size: 24px;
 }
 
  .filter input[type="checkbox"] {
@@ -120,6 +126,7 @@ header{
 		 	/*top: 1px;
 		 	left: 1px;*/
 		 	/*background-color: white;*/
+			text-align: center;
 
 		 }
 
@@ -139,9 +146,7 @@ header{
 .filter input[type="checkbox"]:checked + label:before { 
 		 	opacity: 1;
 		 }
-.filter input[type="checkbox"]:checked + label { 
-		 	background-color: #57bba7;
-		 }
+
 
 /**********************
 Button
