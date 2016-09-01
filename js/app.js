@@ -19,6 +19,9 @@ $(document).ready(function(){
 
 
     setBindings();
+
+
+
 });
 
 
@@ -50,3 +53,25 @@ var mapOptions = {
 var map = new google.maps.Map(mapCanvas, mapOptions);
 
 }
+
+$(".text_process").click(function(){
+
+    $.ajax({
+        url: 'https://yoda.p.mashape.com/yoda?sentence=', // The URL to the API. You can get this by clicking on "Show CURL example" from an API profile
+        type: 'GET', // The HTTP Method
+        data: {sentence: $("#yoda_input").val()}, // Additional parameters here
+        datatype: 'json',
+        success: function (data) {
+            $("#output").html(data);
+        },
+        error: function (err) {
+            alert(err);
+        },
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader("X-Mashape-Authorization", "0Ag18LnIwomshwNByoretdNBojbMp1ZI9vHjsnhY1exVIjmN8L"); // Enter here your Mashape key
+        }
+    });
+
+});
+
+
