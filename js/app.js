@@ -15,63 +15,93 @@ $(document).ready(function(){
 	});
 	});
 
+     
+
+    	     var map;
+  			 var infowindow;
+             var request;
+  			 var service;
+  			 var markers = [];
 
 
+  				function initialize() {
+  				 var center = new google.maps.LatLng(34.1486075,-118.01689658);
 
-    setBindings();
+  				 map = new google.maps.Map(document.getElementById('map'), {
+  				   center: center,
+  				   zoom: 13
+  				 });
+              
+
+  				 request = {
+  				 	 location: center,
+  				 	 radius: 8047,
+  				 	 types: ['cafe']
+  				 };
+
+  				 	infowindow = new google.maps.InfoWindow();
+
+  				 	var service = new google.maps.places.PlacesService(map);
+
+  				 	service.nearbySearch(request, callback);
+
+  				 	google.maps.event.addListener(map, 'click', function(event) {
+  				 		map.setCenter(event.latLng)
+  				 		clearResults(markers)
+
+  				 		var request = {
+  				 			location: event.latLng,
+  				 			radius: 8047,
+  				 			types: ['cafe']
+  				 		};
+
+  				 		service.nearbySearch(request, callback);
+  				 	})
+  				}
+
+  				function callback(results, status) {
+  					if(status == google.maps.places.PlacesServiceStatus.OK) {
+  						for (var i = 0; i < results.length; i++) {
+  							markers.push(createMarker(results[i]));
+  						}
+  					}
+  				}
+
+  				function createMarker(place){
+  					var placeLoc = place.geometry.location;
+  					var marker = new google.maps.Marker({
+  						map: map,
+  						position: place.geometry.location
+  					});
+
+  					google.maps.event.addListener(marker, 'click',function() {
+  						infowindow.setContent(place.name);
+  						infowindow.open(map, this);
+  					});
+
+  					return marker;
+  				}
+
+  				 function clearResults(markers) {
+  				 	for (var m in markers) {
+  				 		markers[m].setMap(null)
+  				 	}
+  				 	markers = []
+
+                 }
+
+
+				
+  				google.maps.event.addDomListener(window, 'load', initialize);
+  				
+        
+   
 
 
 
 });
 
 
-
-function setBindings (){
-    var lastView = "";
-    var currentView = "";
-
-
-
-	$(".menu-view ul li").click(function(e){
-		 
-
-		 var menuID = e.currentTarget.id + "View";
-		 lastView = currentView;
-		 currentView = menuID;
-         
-
-		 $('#' + currentView).transition({ x: '-40%' });
-		  $('#' + lastView).transition({ x: '100%' });
-		
-		});
-
-
-var mapCanvas = document.getElementById("map");
-var mapOptions = {
-    center: new google.maps.LatLng(51.5, -0.2), zoom: 10
-}
-var map = new google.maps.Map(mapCanvas, mapOptions);
-
-}
-
-$(".text_process").click(function(){
-
-    $.ajax({
-        url: 'https://yoda.p.mashape.com/yoda?sentence=', // The URL to the API. You can get this by clicking on "Show CURL example" from an API profile
-        type: 'GET', // The HTTP Method
-        data: {sentence: $("#yoda_input").val()}, // Additional parameters here
-        datatype: 'json',
-        success: function (data) {
-            $("#output").html(data);
-        },
-        error: function (err) {
-            alert(err);
-        },
-        beforeSend: function (xhr) {
-            xhr.setRequestHeader("X-Mashape-Authorization", "0Ag18LnIwomshwNByoretdNBojbMp1ZI9vHjsnhY1exVIjmN8L"); // Enter here your Mashape key
-        }
-    });
-
-});
+ 
 
 

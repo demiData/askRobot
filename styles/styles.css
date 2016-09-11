@@ -76,11 +76,23 @@ header{
 }
 
 
+#study {
+	background-color: #3F3F3F;
+}
+
+#eat {
+	background-color: #3F3F3F;
+}
+
+#drink {
+	background-color: #3F3F3F;
+}
+
+#dance {
+	background-color: #3F3F3F;
+}
 
 
-/* 
-
-*/
 
 .row {display: flex;}
 
@@ -90,8 +102,28 @@ header{
 
     }
 
+ div img {
+ 	position: relative;
+ 	top: -100px;
+ 	width: 300px;
+ }
+
+ .about {
+    text-align: center;
+    max-width: 100%;
+    position: relative;
+    top: 30px;
+    background-color: #FFFFFF; 
+}
+
+.about p {
+	width: 350px;
+	position: relative;
+	left: 25px;
+}
+
 .col {
-	background-color: #A83827;
+	background-color: #32607F;
 	color: #F8FCFF;
 	height: 100px;
 	text-align: center;
@@ -100,8 +132,9 @@ header{
 
 .col.headline {
 	background-color: #FFFFFF;
-	color: #26DDFF;
-	border-bottom: solid 5px #8D8D8D;
+	color: #D4434F;
+    
+	border-bottom: solid 2px #D3D3D3;
 }
 
 .row.check.filter {
@@ -153,9 +186,10 @@ Button
 *********************/
 
 .button {
-	background-color: #299F80;
+	background-color: #34E5B9;
+	border-radius: 60px;
 	border: none;
-	color: #464646;
+	color: #FFFFFF;
 	text-align: center;
 	width: 90%;
 	
@@ -276,7 +310,33 @@ div.about {
 }
 
 
+
 /*************************
-  study_1
+  study_confirm
 **************************/
+div #map {
+	border: 2px solid #C2C2C2;
+	width: 100%;
+	height: 320px;
+	text-align: center;
+}
+
+.row.map {
+	height: 400px;
+}
+
+.button.direction {
+	border-radius: 70px;
+	width: 200px;
+	height: 55px;
+	background-color: #FF4732;
+
+}
+
+.col.map {
+	background-color: #FFFFFF;
+}
+
+
+
 
