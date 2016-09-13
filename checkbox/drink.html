@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1, minimum-scale=1.0, maximum-scale=1.0 ">
+	<link rel="stylesheet" href="../styles/styles.css">
+    <link rel="stylesheet" href="../styles/checkbox.css">
+    <title></title>
+	</head>
+	<body>
+
+	  
+         <header>
+            <h1 class="logo"><a href="../index.html">askRobot</a></h1>
+            <button class="hamburger">&#9776;</button>
+             <button class="cross">&#735;</button>
+        </header>
+
+        <div class="menu">
+          <ul>
+            <a href="../index.html"><li>Home</li></a>
+            <a href="../about.html"><li>About</li></a>
+            <a href="../contact.html"><li>Collaborate</li></a>
+          </ul>
+        </div>
+           
+<div class="row">
+   	<div class="col headline filter">
+   		<h1>Now tell me what you'll like...</h1>
+   	</div>
+   </div>
+   
+   <div class="row check filter">
+        <div class="col checkboxz">
+          <ul class="list">
+             <li class="list__item">
+                 <form action="../study_confirm.html" method="get" onsubmit="return is_checked()">
+               <label class="label--checkbox">
+                 
+                 <input type="checkbox" class="checkbox" value="beer" id="beer" checked>
+                  Beer
+               </label>
+             </li>
+             <li class="list__item">
+               <label class="label--checkbox">
+                 <input type="checkbox" name="pref[]" value="cocktails" class="checkbox" id="cocktails">
+                   Cocktails
+               </label>
+             </li>
+             <li class="list__item">
+               <label class="label--checkbox">
+                 <input type="checkbox" name="pref[]" value="wine" class="checkbox" id="wine">
+                   Wine
+               </label>
+             </li>
+             <li class="list__item">
+               <label class="label--checkbox">
+                 <input type="checkbox" name="pref[]" value="liquor" class="checkbox" id="liquor">
+                   Hard liquor 
+               </label>
+             </li>
+             <li class="list-item zip">
+                 <p>Zip Code: <input type="text" id="zip"/></p>
+             </li>
+        </ul>
+    
+      </div>
+     </div>
+       
+        <button class="button submit" value="submit">Let's find a spot!</button>
+
+        </form>
+
+    <script>
+            function is_checked() {
+
+                    var beer = document.getElementById("beer").checked;
+                    var cocktails = document.getElementById("cocktails").checked;
+                    var wine = document.getElementById("wine").checked;
+                    var liquor = document.getElementById("liquor").checked;
+
+                    if(beer==false && cocktails==false && wine==false && liquor==false) {
+                        alert("please choose one!");
+                        return false;
+                    }   else {
+
+                         return true;
+                    }
+
+                };
+    </script>
+	<script src="../js/jquery-1.12.3.min.js"></script>
+	<script src="../js/jquery.transit.min.js"></script>
+    <script src="../js/app.js"></script>
+    
+	</body>
+</html>

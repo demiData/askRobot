@@ -17,9 +17,9 @@ $(document).ready(function(){
 
      
 
-    	     var map;
-  			 var infowindow;
-             var request;
+    	   var map;
+  			 var infoWindow;
+        var request;
   			 var service;
   			 var markers = [];
 
@@ -39,13 +39,13 @@ $(document).ready(function(){
   				 	 types: ['cafe']
   				 };
 
-  				 	infowindow = new google.maps.InfoWindow();
+  				 	infoWindow = new google.maps.InfoWindow();
 
-  				 	var service = new google.maps.places.PlacesService(map);
+  				 	service = new google.maps.places.PlacesService(map);
 
   				 	service.nearbySearch(request, callback);
 
-  				 	google.maps.event.addListener(map, 'click', function(event) {
+  				 	google.maps.event.addListener(map, 'rightclick', function(event) {
   				 		map.setCenter(event.latLng)
   				 		clearResults(markers)
 
@@ -75,8 +75,8 @@ $(document).ready(function(){
   					});
 
   					google.maps.event.addListener(marker, 'click',function() {
-  						infowindow.setContent(place.name);
-  						infowindow.open(map, this);
+  						infoWindow.setContent(place.name);
+  						infoWindow.open(map, this);
   					});
 
   					return marker;
