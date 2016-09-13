@@ -67,20 +67,33 @@ $(document).ready(function(){
   					}
   				}
 
-  				function createMarker(place){
-  					var placeLoc = place.geometry.location;
-  					var marker = new google.maps.Marker({
-  						map: map,
-  						position: place.geometry.location
-  					});
+  				// function createMarker(place){
+  				// 	var placeLoc = place.geometry.location;
+  				// 	var marker = new google.maps.Marker({
+  				// 		map: map,
+  				// 		position: place.geometry.location
+  				// 	});
 
-  					google.maps.event.addListener(marker, 'click',function() {
-  						infowindow.setContent(place.name);
-  						infowindow.open(map, this);
-  					});
+  				// 	// google.maps.event.addListener(marker, 'click',function() {
+  				// 	// 	infowindow.setContent(place.name);
+  				// 	// 	infowindow.open(map, this);
+  				// 	// });
 
-  					return marker;
-  				}
+  				// 	return marker;
+  				// }
+
+          function createMarker(place) {
+            var placeLoc = place.geometry.location;
+            var marker = new google.maps.Marker({
+              map: map,
+              position: place.geometry.location
+            });
+
+            google.maps.event.addListener(marker, 'click', function() {
+              infowindow.setContent(place.name);
+              infowindow.open(map, this);
+            });
+          }
 
   				 function clearResults(markers) {
   				 	for (var m in markers) {
@@ -93,11 +106,7 @@ $(document).ready(function(){
 
 				
   				google.maps.event.addDomListener(window, 'load', initialize);
-  				
-        
-   
-
-
+  	
 
 });
 
